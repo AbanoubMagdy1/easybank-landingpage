@@ -1,0 +1,115 @@
+.header {
+  position: relative;
+  background-color: $white;
+  padding: 1rem 2rem 0 2rem;
+  @include breakpoints-down('small') {
+    padding: 2rem;
+  }
+  &.open {
+    .header__menu {
+      span:first-child {
+        transform: rotate(45deg);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      span:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &__img {
+    width: 12rem;
+    height: 2rem;
+  }
+
+  &__menu {
+    cursor: pointer;
+    transform-origin: -8px 10px;
+    span {
+      display: block;
+      width: 1.3rem;
+      height: 0.2rem;
+      background-color: $darkBlue;
+      transition: 0.3s all ease-in-out;
+      transform-origin: -1px 1px;
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &__links {
+    a {
+      padding: 1.5rem 0;
+      font-size: 1.2rem;
+      color: $darkBlue;
+      position: relative;
+      transition: 0.3s opacity ease-in-out;
+
+      &:not(:last-child) {
+        margin-right: 0.5rem;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -8px;
+        height: 0.3rem;
+        background-image: linear-gradient(to right, $limeGreen, $brightCyan);
+        opacity: 0;
+        transition: 0.3s opacity ease-in-out;
+      }
+
+      &:hover {
+        opacity: 0.8;
+
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .overlay {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-image: linear-gradient($darkBlue, transparent);
+  }
+
+  &__mobomenu {
+    position: absolute;
+    z-index: 100;
+    padding: 1.5rem;
+    width: calc(100% - 3rem);
+    left: 1.5rem;
+    top: 8rem;
+    background-color: $white;
+    border-radius: 5px;
+    transition: 0.3s all;
+    transform: translateY(-500px);
+
+    a {
+      display: block;
+      text-align: center;
+      font-size: 2rem;
+      padding: 1rem 0;
+      color: $darkBlue;
+      transition: 0.3s opacity ease-in-out;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.features {
+  background-color: $lightGrayishBlue;
+  padding: 4rem 5rem;
+
+  @include breakpoints-down(small) {
+    text-align: center;
+  }
+
+  > p {
+    margin: 1rem 0;
+    max-width: 700px;
+    @include breakpoints-down(small) {
+      margin: 1rem auto;
+      max-width: 400px;
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+
+    @include breakpoints-down(small) {
+      grid-template-columns: 1fr;
+    }
+
+    .feature {
+      @include breakpoints-down(small) {
+        margin: 0 auto;
+        text-align: center;
+        max-width: 400px;
+      }
+
+      img {
+        margin: 1rem 0;
+      }
+
+      h3 {
+        color: $darkBlue;
+        font-weight: 400;
+        margin: 1rem 0;
+        font-size: 140%;
+      }
+    }
+  }
+}

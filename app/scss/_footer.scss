@@ -1,0 +1,110 @@
+.footer {
+  background-color: $darkBlue;
+  padding: 3rem 5rem;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  @include breakpoints-up(medium) {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      'logo links1 links2 cta'
+      'social links1 links2 copy';
+    justify-items: left;
+  }
+
+  a {
+    color: $white;
+  }
+
+  &__logo {
+    @include breakpoints-down(small) {
+      margin-bottom: 2rem;
+    }
+
+    @include breakpoints-up(medium) {
+      grid-area: logo;
+    }
+  }
+
+  &__social {
+    @include breakpoints-down(small) {
+      margin-bottom: 2rem;
+    }
+    @include breakpoints-up(medium) {
+      grid-area: social;
+    }
+
+    a {
+      display: inline-block;
+
+      svg path {
+        transition: fill 200ms ease-in-out;
+      }
+
+      &:hover svg path {
+        fill: $limeGreen;
+      }
+    }
+
+    a:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 2;
+    &.col1 {
+      @include breakpoints-up(medium) {
+        grid-area: links1;
+        align-items: flex-start;
+      }
+    }
+
+    &.col2 {
+      @include breakpoints-up(medium) {
+        grid-area: links2;
+        align-items: flex-start;
+      }
+    }
+
+    a {
+      transition: 200ms color ease-in-out;
+
+      &:hover {
+        color: $limeGreen;
+      }
+    }
+  }
+
+  &__cta {
+    @include breakpoints-up(medium) {
+      grid-area: cta;
+      justify-self: end;
+      align-self: end;
+      margin-right: -2rem;
+      margin-bottom: -1rem;
+
+      button {
+        font-size: 100%;
+      }
+    }
+  }
+
+  &__copy {
+    color: $grayishBlue;
+    font-weight: 400;
+
+    @include breakpoints-up(medium) {
+      grid-area: copy;
+      text-align: right;
+      justify-self: end;
+    }
+  }
+}
