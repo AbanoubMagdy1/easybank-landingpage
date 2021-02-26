@@ -51,7 +51,7 @@
     }
 
     a:not(:last-child) {
-      margin-right: 1rem;
+      margin-right: 0.4rem;
     }
   }
 
@@ -99,12 +99,20 @@
 
   &__copy {
     color: $grayishBlue;
-    font-weight: 400;
 
     @include breakpoints-up(medium) {
       grid-area: copy;
       text-align: right;
       justify-self: end;
     }
+
+    h6 {
+      font-weight: 300;
+    }
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.4rem;
   }
 }

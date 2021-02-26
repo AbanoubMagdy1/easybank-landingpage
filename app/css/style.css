@@ -140,6 +140,9 @@ h4 {
   @media (max-width: 49.9375rem) {
     .header {
       padding: 2rem; } }
+  @media (min-width: 50rem) {
+    .header {
+      margin: 0 1.5rem 0 5rem; } }
   .header.open .header__menu span:first-child {
     transform: rotate(45deg); }
   .header.open .header__menu span:nth-child(2) {
@@ -147,8 +150,12 @@ h4 {
   .header.open .header__menu span:last-child {
     transform: rotate(-45deg); }
   .header__img {
-    width: 12rem;
-    height: 2rem; }
+    width: 7rem;
+    height: 1.2rem; }
+    @media (max-width: 49.9375rem) {
+      .header__img {
+        width: 12rem;
+        height: 2rem; } }
   .header__menu {
     cursor: pointer;
     transform-origin: -8px 10px; }
@@ -163,8 +170,8 @@ h4 {
         margin-bottom: 5px; }
   .header__links a {
     padding: 1.5rem 0;
-    font-size: 1.2rem;
-    color: #2d314d;
+    font-size: 0.9rem;
+    color: #9698a6;
     position: relative;
     transition: 0.3s opacity ease-in-out; }
     .header__links a:not(:last-child) {
@@ -175,7 +182,7 @@ h4 {
       position: absolute;
       left: 0;
       right: 0;
-      bottom: -8px;
+      bottom: 0;
       height: 0.3rem;
       background-image: linear-gradient(to right, #31d35c, #2bb7da);
       opacity: 0;
@@ -213,6 +220,9 @@ h4 {
       transition: 0.3s opacity ease-in-out; }
       .header__mobomenu a:hover {
         opacity: 0.8; }
+  .header__btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem; }
 
 .hero {
   background-color: #fafafa; }
@@ -222,7 +232,7 @@ h4 {
   .hero__img {
     position: relative;
     width: 100%;
-    height: 20rem;
+    height: 24rem;
     background-image: url("/images/bg-intro-mobile.svg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -250,8 +260,8 @@ h4 {
           background-position: 157% 74%;
           height: 110%; } }
   .hero__text {
-    padding: 2rem 2rem;
-    text-align: center; }
+    text-align: center;
+    margin-top: 5rem; }
     @media (min-width: 50rem) {
       .hero__text {
         margin-left: 5rem;
@@ -265,7 +275,7 @@ h4 {
       font-weight: 400; }
       @media (min-width: 50rem) {
         .hero__text h1 {
-          font-size: 313%; } }
+          font-size: 250%; } }
     .hero__text p {
       width: 90%;
       font-size: 100%;
@@ -296,6 +306,9 @@ h4 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem; }
+    @media (max-width: 74.9375rem) {
+      .features__container {
+        grid-template-columns: 1fr 1fr; } }
     @media (max-width: 49.9375rem) {
       .features__container {
         grid-template-columns: 1fr; } }
@@ -319,6 +332,9 @@ h4 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem; }
+    @media (max-width: 74.9375rem) {
+      .articles__container {
+        grid-template-columns: 1fr 1fr; } }
     @media (max-width: 49.9375rem) {
       .articles__container {
         grid-template-columns: 1fr; } }
@@ -374,7 +390,7 @@ h4 {
     .footer__social a:hover svg path {
       fill: #31d35c; }
   .footer__social a:not(:last-child) {
-    margin-right: 1rem; }
+    margin-right: 0.4rem; }
   .footer__links {
     display: flex;
     flex-direction: column;
@@ -402,10 +418,14 @@ h4 {
       .footer__cta button {
         font-size: 100%; } }
   .footer__copy {
-    color: #9698a6;
-    font-weight: 400; }
+    color: #9698a6; }
     @media (min-width: 50rem) {
       .footer__copy {
         grid-area: copy;
         text-align: right;
         justify-self: end; } }
+    .footer__copy h6 {
+      font-weight: 300; }
+  .footer .btn {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.4rem; }

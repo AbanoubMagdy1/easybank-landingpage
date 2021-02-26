@@ -5,6 +5,10 @@
   @include breakpoints-down('small') {
     padding: 2rem;
   }
+  @include breakpoints-up('medium') {
+    margin: 0 1.5rem 0 5rem;
+  }
+
   &.open {
     .header__menu {
       span:first-child {
@@ -20,8 +24,12 @@
   }
 
   &__img {
-    width: 12rem;
-    height: 2rem;
+    width: 7rem;
+    height: 1.2rem;
+    @include breakpoints-down('small') {
+      width: 12rem;
+      height: 2rem;
+    }
   }
 
   &__menu {
@@ -44,8 +52,8 @@
   &__links {
     a {
       padding: 1.5rem 0;
-      font-size: 1.2rem;
-      color: $darkBlue;
+      font-size: 0.9rem;
+      color: $grayishBlue;
       position: relative;
       transition: 0.3s opacity ease-in-out;
 
@@ -59,7 +67,7 @@
         position: absolute;
         left: 0;
         right: 0;
-        bottom: -8px;
+        bottom: 0;
         height: 0.3rem;
         background-image: linear-gradient(to right, $limeGreen, $brightCyan);
         opacity: 0;
@@ -111,5 +119,10 @@
         opacity: 0.8;
       }
     }
+  }
+
+  &__btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
   }
 }
