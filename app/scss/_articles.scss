@@ -2,6 +2,10 @@
   background-color: $veryLightGray;
   padding: 4rem 5rem;
 
+  @include breakpoints-down(small) {
+    padding: 4rem 1rem;
+  }
+
   &__container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -21,6 +25,8 @@
       max-width: 400px;
       @include breakpoints-down(small) {
         margin: 1rem auto;
+        max-width: 600px;
+        width: 90%;
       }
 
       &__img {
